@@ -1,0 +1,48 @@
+#chatContent {
+    background-color: lightblue;
+	border-style: inset;
+	width:400px;
+	height:600 px;
+	text-align: right;
+	margin: auto;
+	vertical-align: middle;
+	padding-right:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	
+}
+
+
+
+
+#chatBox{
+	/* background-color:red; */
+	border-style: ridge;
+	width: 450px;
+	margin: auto; 
+	text-align: center;
+
+}
+
+#chatMessage {
+	/* background-color:blue; */
+	text-align: right;
+	padding-right:22px;
+	padding-top:3px;
+	padding-bottom:20px;
+}
+
+#messageInput{
+	font-style:italic;
+}
+
+h1 {
+	text-align: center;
+    color: navy;
+    margin-left: 20px;
+}
+
+p {
+	text-align: center;
+	color: red;
+}
