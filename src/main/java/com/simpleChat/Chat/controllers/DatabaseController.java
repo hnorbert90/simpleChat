@@ -1,19 +1,17 @@
 package com.simpleChat.Chat.controllers;
 
 import java.sql.SQLException;
-import java.util.Collections;
-
 import com.simpleChat.Chat.modell.ChatModell;
 
 public class DatabaseController extends Connect {
 	static Connect conn;
 	
-	public void sendMessage(String username, String message, Connect _conn) {
+	public void sendMessage(String date, String message, Connect _conn) {
 		connectToDatabase(_conn);
 		try {
 			preparedStatement = connect
 					.prepareStatement("insert into " + getDatabase() + "." + getTable() + " values (?, ?)");
-			preparedStatement.setString(1, username);
+			preparedStatement.setString(1, date);
 			preparedStatement.setString(2, message);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -40,7 +38,7 @@ public class DatabaseController extends Connect {
 		try {
 			while (resultSet.next()) {
 				
-				ChatModell.messages.add(resultSet.getString("username") + " : " + resultSet.getString("message"));
+				ChatModell.messages.add(resultSet.getString("date") + " : " + resultSet.getString("message"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
