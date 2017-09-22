@@ -22,7 +22,7 @@ public class Connect extends DB {
 		
 	}
 
-	public static void close() {
+	public void close() {
 		try {
 			if (resultSet != null)
 				resultSet.close();

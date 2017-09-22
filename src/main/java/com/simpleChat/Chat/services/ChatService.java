@@ -6,12 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ChatService {
 
-	@RequestMapping("/")
-	public String openChat() {
-		String html = "";
-
-		return html;
-
-	}
+	
 
 }

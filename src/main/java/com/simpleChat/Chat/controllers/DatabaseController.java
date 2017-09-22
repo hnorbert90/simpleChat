@@ -1,9 +1,13 @@
 package com.simpleChat.Chat.controllers;
 
 import java.sql.SQLException;
+import java.util.Collections;
+
+import com.simpleChat.Chat.modell.ChatModell;
 
 public class DatabaseController extends Connect {
-
+	static Connect conn;
+	
 	public void sendMessage(String username, String message, Connect _conn) {
 		connectToDatabase(_conn);
 		try {
@@ -14,18 +18,20 @@ public class DatabaseController extends Connect {
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			conn.close();
 		}
 	}
 
-	public String getMessages(Connect _conn) {
+	public void getMessages(Connect _conn) {
 		connectToDatabase(_conn);
 		doQuery();
-		return getString();
-
+		getString();
 	}
 
-	private String getString() {
-		String cache = "";
+	private void getString() {
+	
+		ChatModell.messages.clear();
 		try {
 			resultSet = preparedStatement.executeQuery();
 		} catch (SQLException e1) {
@@ -33,12 +39,15 @@ public class DatabaseController extends Connect {
 		}
 		try {
 			while (resultSet.next()) {
-				cache += resultSet.getString("username") + " : " + resultSet.getString("message") + "\n";
+				
+				ChatModell.messages.add(resultSet.getString("username") + " : " + resultSet.getString("message"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			conn.close();
 		}
-		return cache;
+		
 	}
 
 	private void doQuery() {
@@ -52,7 +61,7 @@ public class DatabaseController extends Connect {
 	}
 
 	private static void connectToDatabase(Connect _conn) {
-		Connect conn = _conn;
+		conn = _conn;
 		conn.connectToDatabase();
 	}
 }

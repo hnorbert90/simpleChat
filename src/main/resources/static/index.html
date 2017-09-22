@@ -1,49 +1,63 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
   <head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
     <meta name="generator"
     content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
     <title>Simple chat</title>
     <link rel="stylesheet" type="text/css" href="style/chatstyle.css" />
   </head>
   <body>
-    <h1>Simple chat</h1>
-    <p>My first springboot powered chat</p>
-    <div id="chatBox">
-	<br>
-      <div id="chatContent">
-	  
-        <span><i>message1</i> :Kitti</span>
+    <form method="POST" action="submit">
+      <h1>Simple chat</h1>
+      <p>My first springboot powered chat</p>
+      <div id="chatBox">
         <br />
-        <span><i>message2</i> :Dani</span>
-        <br />
-        <span><i>message1</i> :Kitti</span>
-        <br />
-		<span><i>message2</i> :Dani</span>
-        <br />
-        <span><i>message1</i> :Kitti</span>
-        <br />
-        <span><i>message2</i> :Dani</span>
-        <br /><span><i>message1</i> :Dani</span>
-        <br />
-        <span><i>message2</i> :Dani</span>
-        <br />
-        <span><i>message1</i> :Kitti</span>
-        <br />
-		<span><i>message1</i> :Kitti</span>
-        <br />
-        <span><i>message2</i> :Dani</span>
-        <br />
-        <span><i>message1</i> :Kitti</span>
-        <br />
-		<span><i>message2</i> :Dani</span>
-        <br />
+        <div id="chatContent">
+          <span>
+          <i>message1</i> :Kitti</span>
+          <br />
+          <span>
+          <i>message2</i> :Dani</span>
+          <br />
+          <span>
+          <i>message1</i> :Kitti</span>
+          <br />
+          <span>
+          <i>message2</i> :Dani</span>
+          <br />
+          <span>
+          <i>message1</i> :Kitti</span>
+          <br />
+          <span>
+          <i>message2</i> :Dani</span>
+          <br />
+          <span>
+          <i>message1</i> :Dani</span>
+          <br />
+          <span>
+          <i>message2</i> :Dani</span>
+          <br />
+          <span>
+          <i>message1</i> :Kitti</span>
+          <br />
+          <span>
+          <i>message1</i> :Kitti</span>
+          <br />
+          <span>
+          <i>message2</i> :Dani</span>
+          <br />
+          <span>
+          <i>message1</i> :Kitti</span>
+          <br />
+          <span>
+          <i>message2</i> :Dani</span>
+          <br />
+        </div>
+        <div id="chatMessage">
+        <input id="message" type="text" name="message" value="Please write a message..." size="46" /> 
+        <input type="submit" value="submit" /></div>
       </div>
-      <div id="chatMessage">
-      <input id="messageInput" type="text" name="message" value="Please write a message..." size=46 /> 
-      <input type="submit" value="Submit" />
-	  </div>
-    </div>
+    </form>
   </body>
 </html>
-
